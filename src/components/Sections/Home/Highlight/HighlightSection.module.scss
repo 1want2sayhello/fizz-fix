@@ -1,0 +1,189 @@
+@use "../../../../scss/abstracts/variables" as *;
+
+.highlightSection {
+  background: linear-gradient(
+    to top,
+    rgba($secondary-color, 0.6) 0%,
+    rgba($light-accent, 0.7) 50%
+  );
+
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 8rem;
+}
+
+.highlightWrapper,
+.highlightPanel {
+  border-radius: 30px;
+}
+
+.highlightWrapper {
+  margin-top: 1rem;
+  width: 100%;
+  height: 560px;
+  min-height: 0;
+  background-color: $dark-accent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+
+.highlightPanel {
+  width: clamp(300px, 42vw, 800px);
+  min-height: 0;
+  height: auto;
+  transform: translateY(-8%);
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 4rem;
+  transition: 0.2s ease-in-out;
+}
+
+.highlightPanel h2 {
+  margin: 0 0 2rem;
+  line-height: 1.2;
+  font-family: $accent-font;
+  color: $secondary-color;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.highlightPanel h2 span {
+  display: block;
+}
+
+.highlightPanel p {
+  margin: 0 0 1.5rem;
+  font-family: $body-font;
+  color: $secondary-color;
+  font-size: clamp(1rem, 1.2rem, 1.6rem);
+}
+
+.highlightPanel .pillBtn {
+  background-color: $light-accent;
+  border: 4px solid $dark-accent;
+  border-radius: 25px;
+  margin-top: 0.5rem;
+  height: 80px;
+  width: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: $header-font;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.highlightPanel .pillBtn {
+  color: $dark-accent;
+  text-decoration: none;
+}
+
+.highlightPanel .pillBtn:hover {
+  background-color: $dark-accent;
+  border: 4px solid $secondary-color;
+  color: $secondary-color;
+}
+
+.highlightVisual {
+  background: linear-gradient(
+    to top,
+    rgba($dark-accent, 0.9) 0%,
+    rgba($light-accent, 0.7) 70%
+  );
+
+  border: 10px solid $primary-color;
+  width: min(28vw, 460px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visualImg {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+}
+
+.visualImg img {
+  transform: scale(1.6);
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/**
+        MOBILE STYLES
+**/
+
+@media (max-width: 1100px) {
+  .highlightSection {
+    padding: 0.5rem;
+  }
+
+  .highlightWrapper {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .highlightPanel {
+    margin-top: 2rem;
+    width: 100%;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .highlightSection {
+    padding: 1rem;
+  }
+
+  .highlightWrapper {
+    min-height: auto;
+    height: auto;
+    margin-top: 4rem;
+    padding: 1rem;
+  }
+
+  .highlightWrapper,
+  .highlightPanel {
+    border-radius: 20px;
+  }
+
+  .highlightPanel {
+    margin-top: 2rem;
+    width: 100%;
+    transform: translateY(0);
+    text-align: center;
+    min-height: auto;
+    height: auto;
+    padding: 2rem 1.25rem;
+  }
+
+  .highlightPanel .pillBtn {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .highlightPanel h3 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .highlightVisual {
+    width: min(82vw, 480px);
+    border-width: 6px;
+  }
+
+  .visualImg img {
+    transform: scale(1.35);
+  }
+}

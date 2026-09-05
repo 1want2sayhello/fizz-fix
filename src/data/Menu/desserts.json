@@ -1,0 +1,29 @@
+[
+  {
+    "id": "dessert-red-velvet",
+    "name": "Dr Pepper Red Velvet Cake",
+    "price": 4.75,
+    "calories": 780,
+    "notes": ["Signature house-made cake"],
+    "description": "Moist red velvet cake made with Dr Pepper for a rich, subtly spiced finish.",
+    "image": "/assets/images/menu-thumbnails/desserts/dr-pepper-red-velvet.webp"
+  },
+  {
+    "id": "dessert-turtle-cheesecake",
+    "name": "Turtle Cheesecake",
+    "price": 5.25,
+    "calories": 920,
+    "notes": ["Chocolate", "Caramel", "Pecans"],
+    "description": "Creamy cheesecake layered with chocolate, caramel, and toasted pecans.",
+    "image": "/assets/images/menu-thumbnails/desserts/cheesecake.webp"
+  },
+  {
+    "id": "dessert-brookie",
+    "name": "Brookie",
+    "price": 4.5,
+    "calories": 850,
+    "notes": ["Brownie", "Chocolate Chip Cookie"],
+    "description": "A thick brownie and chocolate chip cookie baked together into one rich dessert.",
+    "image": "/assets/images/menu-thumbnails/desserts/brookie.webp"
+  }
+]

@@ -1,0 +1,220 @@
+@use "../../scss/abstracts/variables" as *;
+
+.mainNav {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: $nav-height;
+  width: 100%;
+
+  display: flex;
+  overflow: hidden;
+  z-index: 25;
+}
+
+.navLogo {
+  flex: 0 0 clamp(210px, 17vw, 280px);
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 25px;
+  align-items: center;
+}
+
+.navLogo img {
+  display: block;
+  width: clamp(150px, 13vw, 230px);
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.navLinks {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(1.75rem, 3vw, 3rem);
+  padding: 0 clamp(1.5rem, 2.5vw, 3rem) 0 0;
+}
+
+.navLinks ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.navLinks a:hover {
+  color: $light-accent;
+}
+
+.navLinks a {
+  color: $secondary-color;
+  font-family: $header-font;
+  font-size: clamp(1.85rem, 2vw, 2.4rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.navLinks .navLeft {
+  gap: 3rem;
+  justify-content: flex-end;
+}
+
+.navLinks .navRight {
+  min-width: 0;
+  justify-content: flex-end;
+  gap: clamp(1.25rem, 2.5vw, 3rem);
+}
+
+.navLinks .navRight li {
+  margin: 0;
+}
+
+.navRight .pillBtn {
+  height: 70px;
+  width: 200px;
+  border-radius: 35px;
+  background-color: $dark-accent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.navRight .pillBtn {
+  font-family: $accent-font;
+  font-size: clamp(1.25rem, 1.35vw, 1.6rem);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.navRight li img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+}
+
+.cartNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cartCount {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $dark-accent;
+  color: $secondary-color;
+  font-family: $header-font;
+  font-size: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/**
+        MOBILE STYLES
+**/
+
+.hamburgerWrapper {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 1068px) {
+  .navLogo {
+    flex-basis: 200px;
+  }
+  .navLinks {
+    column-gap: 1.5rem;
+    padding-right: 1rem;
+  }
+  .navLinks .navLeft {
+    gap: 1.5rem;
+  }
+  .navLinks .navRight {
+    gap: 1rem;
+  }
+  .navLinks a {
+    font-size: clamp(1.4rem, 2.1vw, 1.65rem);
+  }
+  .navRight .pillBtn {
+    width: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainNav {
+    padding: 0.5rem;
+    height: 100px;
+    overflow: visible;
+    align-items: center;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .hamburgerWrapper {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navLogo {
+    padding-left: 0.5rem;
+  }
+  .navLogo img {
+    max-width: 180px;
+    object-fit: contain;
+  }
+
+  .mobileMenu {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+
+    background: $primary-color;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .mobileMenu a {
+    width: 100%;
+    height: 100px;
+    padding: 0.85rem 1rem;
+    color: $secondary-color;
+    font-family: $header-font;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,816 @@
+@use "../../scss/abstracts/variables" as *;
+
+.cart {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  padding: 3.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartHeader {
+  width: 100%;
+  height: clamp(80px, 8vw, 120px);
+  margin-bottom: 2rem;
+  padding: 2rem;
+
+  background-color: $dark-accent;
+  color: $secondary-color;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.cartHeader h1 {
+  margin: 0;
+
+  font-family: $accent-font;
+  font-size: clamp(1.2rem, 8vw, 3rem);
+  letter-spacing: 0.2rem;
+
+  color: $secondary-color;
+}
+
+.clearCartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.clearCartBtn {
+  min-width: 118px;
+  min-height: 58px;
+  padding: 0.7rem 1.15rem;
+
+  border: 2px solid $secondary-color;
+  border-radius: 14px;
+
+  background-color: transparent;
+
+  font-family: $header-font;
+  font-size: 1rem;
+  color: $secondary-color;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.clearCartBtn:hover {
+  background-color: $secondary-color;
+  color: $dark-accent;
+  transform: translateY(-2px);
+}
+
+.emptyCart {
+  width: 60%;
+  height: clamp(500px, 30vh, 800px);
+
+  border: 6px solid $dark-accent;
+  background-color: rgba($secondary-color, 0.5);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 32px 0 rgba($dark-accent, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.emptyCart h2 {
+  color: $dark-accent;
+
+  font-family: $header-font;
+  font-size: 3.6rem;
+  letter-spacing: 0.3rem;
+}
+
+.message {
+  color: $dark-accent;
+
+  font-family: $body-font;
+  font-size: 1.6rem;
+}
+
+.orderLink {
+  width: 250px;
+  height: 100px;
+  margin-top: 2.2rem;
+
+  border-radius: 45px;
+  background-color: $dark-accent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: $accent-font;
+  font-size: 1.8rem;
+  color: $secondary-color;
+
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.orderLink a {
+  font-family: $accent-font;
+  font-size: 1.8rem;
+  color: $secondary-color;
+}
+
+.orderLink:hover {
+  border: 6px solid $dark-accent;
+  background-color: transparent;
+  color: $dark-accent;
+}
+
+.cartContainer {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  align-items: start;
+
+  gap: 1.5rem;
+}
+
+.cartList {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 1.2rem;
+
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  gap: 1rem;
+}
+
+.cartItem {
+  width: 100%;
+  padding: 1rem;
+
+  border: 1px solid rgba($secondary-color, 0.4);
+  border-radius: 22px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba($secondary-color, 0.55),
+    rgba($light-accent, 0.95)
+  );
+
+  box-shadow: 0 6px 14px rgba(64, 62, 62, 0.16);
+
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.itemImg {
+  flex: 0 0 130px;
+  width: 130px;
+  height: 130px;
+
+  overflow: hidden;
+  border-radius: 16px;
+
+  background-color: rgba($secondary-color, 0.45);
+}
+
+.itemImg img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+}
+
+.itemInfo {
+  flex: 1;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns:
+    minmax(150px, 1.4fr)
+    minmax(75px, 0.55fr)
+    minmax(115px, 0.75fr)
+    minmax(95px, 0.65fr)
+    42px;
+
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.itemMain {
+  min-width: 0;
+}
+
+.itemMain h2 {
+  margin: 0;
+
+  font-family: $header-font;
+  font-size: clamp(1.35rem, 1.6vw, 1.7rem);
+
+  color: $dark-accent;
+}
+
+.itemCalories {
+  margin: 0.3rem 0 0;
+
+  font-family: $body-font;
+  font-size: 0.9rem;
+
+  color: $dark-accent;
+  opacity: 0.7;
+}
+
+.unitPrice,
+.lineTotal,
+.quantityControl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quantityControl {
+  align-items: center;
+}
+
+.unitPrice span,
+.lineTotal span,
+.quantityLabel {
+  font-family: $body-font;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  white-space: nowrap;
+
+  color: $dark-accent;
+  opacity: 0.65;
+}
+
+.unitPrice strong,
+.lineTotal strong {
+  font-family: $body-font;
+  font-size: 1.05rem;
+
+  color: $dark-accent;
+}
+
+.quantityButtons {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  border: 2px solid $dark-accent;
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background-color: rgba($secondary-color, 0.4);
+}
+
+.quantityButtons button {
+  width: 34px;
+  height: 38px;
+
+  border: 0;
+  background-color: transparent;
+
+  font-family: $body-font;
+  font-size: 1.25rem;
+  color: $dark-accent;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.quantityButtons button:hover {
+  background-color: $dark-accent;
+  color: $secondary-color;
+}
+
+.quantityValue {
+  min-width: 32px;
+
+  font-family: $body-font;
+  font-weight: 600;
+  text-align: center;
+
+  color: $dark-accent;
+}
+
+.deleteIcon {
+  width: 60px;
+  height: 60px;
+  padding: 0.5rem;
+
+  border: 0;
+  border-radius: 50%;
+
+  background-color: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.2s ease;
+}
+
+.deleteIcon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.deleteIcon:hover {
+  transform: scale(1.35);
+}
+
+/**
+ * Order Summary
+ */
+
+.checkout {
+  width: 100%;
+  padding: 1.4rem;
+
+  border: 1px solid rgba($secondary-color, 0.45);
+  border-radius: 22px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba($secondary-color, 0.9),
+    rgba($light-accent, 0.95)
+  );
+
+  box-shadow: 0 8px 20px rgba(64, 62, 62, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rewards,
+.orderSummary {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.2rem;
+}
+
+.rewards {
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $primary-color;
+}
+
+.rewardsImg {
+  position: relative;
+
+  width: 100%;
+  height: clamp(220px, 20vw, 350px);
+}
+
+.rewardsImg img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: 20% 30%;
+
+  opacity: 0.7;
+}
+
+.couponInput {
+  width: 100%;
+  min-height: 64px;
+  padding: 0.75rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.couponInput input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0.65rem 0.9rem;
+
+  border: 1px solid rgba($dark-accent, 0.35);
+  border-radius: 10px;
+
+  font-family: $body-font;
+}
+
+.orderSummary {
+  padding-bottom: 1rem;
+}
+
+.orderSummary h2 {
+  margin: 0;
+  padding: 1.5rem 0 1rem;
+
+  font-family: $accent-font;
+  font-size: 2.2rem;
+
+  color: $dark-accent;
+}
+
+.orderList {
+  width: 100%;
+  min-height: 56px;
+  padding: 0.65rem 0;
+
+  border-bottom: 1px solid rgba($dark-accent, 0.14);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 70px 70px;
+  align-items: center;
+
+  gap: 0.75rem;
+}
+
+.orderList p {
+  margin: 0;
+
+  font-family: $body-font;
+  color: $dark-accent;
+}
+
+.orderList p:nth-child(2) {
+  text-align: center;
+}
+
+.orderList p:last-child {
+  font-weight: 600;
+  text-align: right;
+}
+
+.orderTotal {
+  margin-top: 1rem;
+  padding-top: 1rem;
+
+  border-top: 2px solid rgba($dark-accent, 0.35);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: $body-font;
+  color: $dark-accent;
+}
+
+.orderTotal span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.orderTotal strong {
+  font-size: 1.4rem;
+}
+
+.btnContainer {
+  width: 100%;
+  min-height: 90px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btnContainer .checkoutBtn {
+  width: 100%;
+  min-height: 64px;
+
+  border: 2px solid $dark-accent;
+  border-radius: 18px;
+
+  background-color: $dark-accent;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+
+  color: $secondary-color;
+
+  font-family: $header-font;
+  font-size: 1.35rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btnContainer .checkoutBtn:hover {
+  background-color: transparent;
+  color: $dark-accent;
+
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .cartContainer {
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+  }
+
+  .itemInfo {
+    grid-template-columns:
+      minmax(135px, 1.3fr)
+      minmax(70px, 0.55fr)
+      minmax(105px, 0.7fr)
+      minmax(90px, 0.65fr)
+      40px;
+
+    gap: 0.65rem;
+  }
+
+  .quantityButtons button {
+    width: 32px;
+    height: 38px;
+  }
+
+  .quantityValue {
+    min-width: 30px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .cartContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .cartList {
+    width: 100%;
+    height: auto;
+  }
+
+  .checkout {
+    width: 100%;
+  }
+
+  .itemInfo {
+    grid-template-columns:
+      minmax(180px, 1.5fr)
+      minmax(85px, 0.65fr)
+      minmax(115px, 0.75fr)
+      minmax(100px, 0.75fr)
+      44px;
+
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .cart {
+    padding: 1.5rem;
+  }
+
+  .emptyCart {
+    width: 90%;
+  }
+
+  .cartItem {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .itemImg {
+    flex-basis: 110px;
+    width: 110px;
+    height: 110px;
+  }
+
+  .itemInfo {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .itemMain {
+    grid-column: 1 / -1;
+  }
+
+  .deleteIcon {
+    justify-self: end;
+    align-self: end;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart {
+    padding: 0.75rem;
+  }
+
+  .cartHeader {
+    height: auto;
+    min-height: 100px;
+    padding: 1rem;
+
+    gap: 0.75rem;
+  }
+
+  .cartHeader h1 {
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    line-height: 0.95;
+  }
+
+  .clearCartBtn {
+    min-width: 94px;
+    min-height: 48px;
+    padding: 0.5rem 0.7rem;
+
+    border-radius: 12px;
+
+    font-size: 0.8rem;
+  }
+
+  .emptyCart {
+    width: 100%;
+    min-height: 420px;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .emptyCart h2 {
+    font-size: clamp(2.3rem, 11vw, 3.6rem);
+  }
+
+  .message {
+    font-size: 1.2rem;
+  }
+
+  .orderLink {
+    width: min(220px, 80vw);
+    height: 75px;
+  }
+
+  .cartList {
+    padding: 0;
+  }
+
+  .cartItem {
+    flex-direction: column;
+    padding: 0.8rem;
+
+    gap: 0.75rem;
+  }
+
+  .itemImg {
+    width: 100%;
+    height: 165px;
+    flex-basis: auto;
+
+    border-radius: 14px;
+  }
+
+  .itemInfo {
+    width: 100%;
+    padding: 0;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+
+    gap: 0.9rem 0.5rem;
+  }
+
+  .itemMain {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    align-self: center;
+  }
+
+  .itemMain h2 {
+    font-size: 1.25rem;
+  }
+
+  .deleteIcon {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: end;
+    align-self: center;
+
+    width: 45px;
+    height: 45px;
+  }
+
+  .unitPrice {
+    grid-column: 1;
+    grid-row: 2;
+
+    align-items: flex-start;
+  }
+
+  .quantityControl {
+    grid-column: 2;
+    grid-row: 2;
+
+    align-items: center;
+  }
+
+  .lineTotal {
+    grid-column: 3;
+    grid-row: 2;
+
+    align-items: flex-end;
+
+    text-align: right;
+  }
+
+  .unitPrice span,
+  .lineTotal span,
+  .quantityLabel {
+    font-size: 0.7rem;
+  }
+
+  .unitPrice strong,
+  .lineTotal strong {
+    font-size: 0.95rem;
+  }
+
+  .quantityButtons button {
+    width: 30px;
+    height: 36px;
+  }
+
+  .quantityValue {
+    min-width: 28px;
+  }
+
+  .rewardsImg {
+    height: 260px;
+  }
+
+  .checkout {
+    padding: 1rem;
+  }
+
+  .orderSummary h2 {
+    font-size: clamp(1.8rem, 9vw, 2.2rem);
+  }
+
+  .orderList {
+    grid-template-columns: minmax(0, 1fr) 58px 65px;
+
+    gap: 0.4rem;
+  }
+
+  .orderList p:nth-child(2) {
+    text-align: center;
+
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+
+  .orderList p:last-child {
+    text-align: right;
+  }
+
+  .btnContainer {
+    justify-content: center;
+  }
+}

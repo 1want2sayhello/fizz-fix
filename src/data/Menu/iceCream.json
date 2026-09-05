@@ -1,0 +1,42 @@
+[
+  {
+    "id": "shake-vanilla-bean-caramel",
+    "name": "Vanilla Bean Caramel Shake",
+    "type": "milkshake",
+    "price": 5.5,
+    "calories": 890,
+    "notes": ["Vanilla Ice Cream", "Milk", "Caramel"],
+    "description": "A thick, creamy vanilla shake blended smooth and served ice cold.",
+    "image": "/assets/images/menu-thumbnails/ice-cream/vanilla-bean-shake.webp"
+  },
+  {
+    "id": "shake-chocolate",
+    "name": "Chocolate Shake",
+    "type": "milkshake",
+    "price": 5.5,
+    "calories": 840,
+    "notes": ["Chocolate Ice Cream", "Milk"],
+    "description": "Rich chocolate ice cream blended into a classic, indulgent shake.",
+    "image": "/assets/images/menu-thumbnails/ice-cream/chocolate-shake.webp"
+  },
+  {
+    "id": "sundae-classic",
+    "name": "Classic Sundae",
+    "type": "sundae",
+    "price": 4.75,
+    "calories": 610,
+    "notes": ["Vanilla Ice Cream", "Chocolate Sauce"],
+    "description": "Vanilla ice cream topped with warm chocolate sauce for a timeless favorite.",
+    "image": "/assets/images/menu-thumbnails/ice-cream/classic-sundae.webp"
+  },
+  {
+    "id": "sundae-rootbeer-float",
+    "name": "Root Beer Float",
+    "type": "sundae",
+    "price": 5.25,
+    "calories": 680,
+    "notes": ["Root Beer", "Vanilla Ice Cream"],
+    "description": "Cold root beer poured over vanilla ice cream for a classic float.",
+    "image": "/assets/images/menu-thumbnails/ice-cream/rootbeer-float.webp"
+  }
+]

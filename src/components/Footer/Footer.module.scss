@@ -1,0 +1,206 @@
+// variables import
+@use "../../scss/abstracts/variables" as *;
+
+.footer {
+  width: 100%;
+  min-height: 600px;
+  background-image: url("../../assets/graphics/footer-background.svg");
+  background-size: 2000px;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-top: 8px solid $dark-accent;
+}
+
+.topContent {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1.2fr;
+  gap: 3rem;
+  padding: 3rem 1.5rem;
+  align-items: start;
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 2.2rem;
+
+  font-size: 1rem;
+  font-family: $header-font;
+  color: $secondary-color;
+}
+
+.footerLogo img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footerAbout,
+.footerLocations {
+  padding-top: 2.2rem;
+  display: flex;
+  align-items: flex-start;
+  color: $secondary-color;
+}
+
+.footerAbout {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.footerAbout h4 {
+  font-family: $header-font;
+  letter-spacing: 0.02rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin: 0 0 1rem;
+}
+
+.footerAbout p {
+  max-width: 500px;
+  line-height: 1.6;
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  font-family: $body-font;
+}
+
+.footerLocations h2 {
+  font-family: $header-font;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  letter-spacing: 0.02rem;
+  margin-top: 0;
+}
+
+.footerLocations li {
+  font-family: $body-font;
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  cursor: pointer;
+
+  transition: 0.2s ease-in-out;
+}
+
+.footerLocations li:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.socials {
+  width: 100%;
+  height: auto;
+  background-color: $dark-accent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $secondary-color;
+  font-family: $header-font;
+  font-size: 1.6rem;
+  padding: 0 2rem;
+}
+
+.socials a {
+  color: $secondary-color;
+  text-decoration: none;
+}
+
+.icons i {
+  cursor: pointer;
+  padding: 0 1.6rem;
+}
+
+.icons i:hover {
+  transform: scale(1.2);
+}
+
+.icons,
+.delivery {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delivery img {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  object-fit: contain;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.delivery img:hover {
+  opacity: 1;
+}
+.copyright {
+  width: 100%;
+  height: 75px;
+  background-color: $dark-accent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $secondary-color;
+  font-family: $header-font;
+  font-size: clamp(0.8rem, 0.85vw, 1rem);
+}
+
+.copyright h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+/**
+    MOBILE STYLES
+**/
+
+@media (max-width: 768px) {
+  .topContent {
+    grid-template-columns: 1fr;
+  }
+
+  .topContent > div {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .footerLogo,
+  .footerAbout,
+  .footerLocations {
+    padding-top: 0;
+  }
+
+  .socials {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .delivery {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .delivery img {
+    max-width: 170px;
+  }
+  .icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .copyright {
+    height: auto;
+    min-height: 75px;
+    padding: 1rem;
+    text-align: center;
+  }
+}

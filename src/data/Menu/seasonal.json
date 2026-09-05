@@ -1,0 +1,46 @@
+[
+  {
+    "id": "seasonal-pumpkin-cola",
+    "name": "Pumpkin Cream Cola",
+    "base": "cola",
+    "price": 5,
+    "calories": 520,
+    "seasonal": true,
+    "notes": ["Cola", "Pumpkin Spice", "Vanilla Cream"],
+    "description": "Classic cola blended with pumpkin spice and vanilla cream for a smooth seasonal twist.",
+    "image": "/assets/images/menu-thumbnails/seasonal/pumpkin-cola.webp"
+  },
+  {
+    "id": "seasonal-cherry-vanilla-drpepper",
+    "name": "Cherry Vanilla Dr Pepper",
+    "base": "dr pepper",
+    "price": 5,
+    "calories": 490,
+    "seasonal": true,
+    "notes": ["Dr Pepper", "Cherry", "Vanilla Cream"],
+    "description": "Dr Pepper mixed with cherry and vanilla cream for a rich, nostalgic favorite.",
+    "image": "/assets/images/menu-thumbnails/seasonal/vanilla-cherry-drpepper.webp"
+  },
+  {
+    "id": "seasonal-strawberry-sprite",
+    "name": "Strawberry Sprite",
+    "base": "sprite",
+    "price": 5,
+    "calories": 450,
+    "seasonal": true,
+    "notes": ["Sprite", "Strawberry", "Cream"],
+    "description": "Bright Sprite combined with strawberry and cream for a light, refreshing sip.",
+    "image": "/assets/images/menu-thumbnails/seasonal/strawberry-sprite.webp"
+  },
+  {
+    "id": "seasonal-toasted-rootbeer",
+    "name": "Toasted Marshmallow Root Beer",
+    "base": "root beer",
+    "price": 5,
+    "calories": 540,
+    "seasonal": true,
+    "notes": ["Root Beer", "Toasted Marshmallow", "Cream"],
+    "description": "Root beer infused with toasted marshmallow and cream for a warm, dessert-like finish.",
+    "image": "/assets/images/menu-thumbnails/seasonal/toasted-marshmellow-rootbeer.webp"
+  }
+]

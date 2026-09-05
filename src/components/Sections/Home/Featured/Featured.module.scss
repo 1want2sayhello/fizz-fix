@@ -1,0 +1,57 @@
+@use "../../../../scss/abstracts/variables" as *;
+
+.featuredDrinks {
+  height: auto;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba($secondary-color, 0.9) 0%,
+    rgba($light-accent, 0.7) 70%
+  );
+  min-height: 800px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.featuredDrinks h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-family: $accent-font;
+  color: $dark-accent;
+  text-align: center;
+}
+
+.featuredGrid {
+  height: auto;
+  width: 100%;
+  margin-bottom: 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  place-content: center;
+  gap: 2rem;
+  padding: 2rem clamp(1rem, 8vw, 16rem);
+}
+
+@media (max-width: 1050px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .featuredDrinks {
+    min-height: auto;
+    padding: 5rem 0;
+  }
+  .featuredDrinks h3 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    text-align: center;
+  }
+  .featuredGrid {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+  }
+}

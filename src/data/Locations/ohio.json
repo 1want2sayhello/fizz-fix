@@ -1,0 +1,134 @@
+[
+  {
+    "id": "oh-columbus-short-north",
+    "name": "Fizz Fix Short North",
+    "address": {
+      "street": "789 N High St",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43215"
+    },
+    "coordinates": {
+      "lat": 39.9812,
+      "lng": -83.0048
+    },
+    "phone": "(614) 555-0184",
+    "hoursRaw": {
+      "mon": { "open": "11:00", "close": "21:00" },
+      "tue": { "open": "11:00", "close": "21:00" },
+      "wed": { "open": "11:00", "close": "21:00" },
+      "thu": { "open": "11:00", "close": "22:00" },
+      "fri": { "open": "11:00", "close": "22:00" },
+      "sat": { "open": "10:00", "close": "22:00" },
+      "sun": { "open": "12:00", "close": "18:00" }
+    },
+    "hoursDisplay": {
+      "mon_fri": "11am – 9pm",
+      "sat": "10am – 10pm",
+      "sun": "12pm – 6pm"
+    },
+    "features": ["drive-thru", "mobile-ordering", "seasonal-menu"],
+    "openingDate": "2024-06-15",
+    "isActive": true,
+    "isComingSoon": false
+  },
+  {
+    "id": "oh-cincinnati-otr",
+    "name": "Fizz Fix Over-the-Rhine",
+    "address": {
+      "street": "1420 Vine St",
+      "city": "Cincinnati",
+      "state": "OH",
+      "zip": "45202"
+    },
+    "coordinates": {
+      "lat": 39.1136,
+      "lng": -84.5166
+    },
+    "phone": "(513) 555-0227",
+    "hoursRaw": {
+      "mon": { "open": "11:00", "close": "20:00" },
+      "tue": { "open": "11:00", "close": "20:00" },
+      "wed": { "open": "11:00", "close": "20:00" },
+      "thu": { "open": "11:00", "close": "21:00" },
+      "fri": { "open": "11:00", "close": "22:00" },
+      "sat": { "open": "11:00", "close": "22:00" },
+      "sun": null
+    },
+    "hoursDisplay": {
+      "mon_fri": "11am – 8pm",
+      "sat": "11am – 10pm",
+      "sun": "Closed"
+    },
+    "features": ["walk-up-window", "late-night"],
+    "openingDate": "2023-10-03",
+    "isActive": true,
+    "isComingSoon": false
+  },
+  {
+    "id": "oh-cleveland-ohio-city",
+    "name": "Fizz Fix Ohio City",
+    "address": {
+      "street": "2520 Market Ave",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44113"
+    },
+    "coordinates": {
+      "lat": 41.4846,
+      "lng": -81.7033
+    },
+    "phone": "(216) 555-0319",
+    "hoursRaw": {
+      "mon": { "open": "12:00", "close": "20:00" },
+      "tue": { "open": "12:00", "close": "20:00" },
+      "wed": { "open": "12:00", "close": "20:00" },
+      "thu": { "open": "12:00", "close": "21:00" },
+      "fri": { "open": "12:00", "close": "21:00" },
+      "sat": { "open": "11:00", "close": "21:00" },
+      "sun": { "open": "12:00", "close": "18:00" }
+    },
+    "hoursDisplay": {
+      "mon_fri": "12pm – 8pm",
+      "sat": "11am – 9pm",
+      "sun": "12pm – 6pm"
+    },
+    "features": ["indoor-seating", "family-friendly"],
+    "openingDate": "2022-08-21",
+    "isActive": true,
+    "isComingSoon": false
+  },
+  {
+    "id": "oh-dayton-oregon-district",
+    "name": "Fizz Fix Oregon District",
+    "address": {
+      "street": "430 E 5th St",
+      "city": "Dayton",
+      "state": "OH",
+      "zip": "45402"
+    },
+    "coordinates": {
+      "lat": 39.7589,
+      "lng": -84.1811
+    },
+    "phone": "(937) 555-0146",
+    "hoursRaw": {
+      "mon": { "open": "11:00", "close": "20:00" },
+      "tue": { "open": "11:00", "close": "20:00" },
+      "wed": { "open": "11:00", "close": "20:00" },
+      "thu": { "open": "11:00", "close": "20:00" },
+      "fri": { "open": "11:00", "close": "21:00" },
+      "sat": { "open": "10:00", "close": "21:00" },
+      "sun": null
+    },
+    "hoursDisplay": {
+      "mon_fri": "11am – 8pm",
+      "sat": "10am – 9pm",
+      "sun": "Closed"
+    },
+    "features": ["coming-soon", "mobile-ordering"],
+    "openingDate": "2025-03-01",
+    "isActive": false,
+    "isComingSoon": true
+  }
+]

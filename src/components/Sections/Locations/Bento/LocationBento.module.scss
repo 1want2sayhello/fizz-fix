@@ -1,0 +1,193 @@
+
+@use "../../../../scss/abstracts/variables" as *;
+
+.bentoContent {
+  height: 700px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "hero hero hero tall"
+    "hero hero hero tall"
+    "box1 box2 box3 tall";
+  gap: 20px;
+
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+
+.bubble {
+  max-width: 75px;
+  max-height: 75px;
+  object-fit: contain;
+}
+
+/**
+
+  Bento Layout 
+
+**/
+.bento {
+  border-radius: 20px;
+  background-color: $light-accent;
+}
+
+.bentoHero {
+  grid-area: hero;
+}
+.tall {
+  grid-area: tall;
+}
+.box1 {
+  grid-area: box1;
+}
+.box2 {
+  grid-area: box2;
+}
+.box3 {
+  grid-area: box3;
+}
+
+.bentoHero {
+  opacity: 0.5;
+}
+
+.bentoHero img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.box1,
+.box2,
+.box3 {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+
+  font-family: $accent-font;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.bento span {
+  color: $primary-color;
+}
+.box1 {
+  background-color: $third-color;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  line-height: 1.2;
+  background-color: $light-accent;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tagline h3 {
+  margin: 0;
+}
+
+.checked {
+  color: $primary-color;
+}
+
+.unchecked {
+  color: $dark-accent;
+}
+
+
+.box3 {
+  background-color: $secondary-color;
+}
+
+
+/**
+    TALL - We're Hiring
+
+**/
+
+.tall {
+  background-color: $primary-color;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba($light-accent, 0.6);
+}
+
+.hiring {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  object-fit: cover;
+}
+
+.tall::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  background: linear-gradient(to top, rgba($primary-color, 0.9), transparent);
+  z-index: 1;
+}
+
+
+.tall .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: $light-accent;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.tall .content h3 {
+  font-family: $accent-font;
+  font-size: 2.6rem;
+  letter-spacing: 0.2rem;
+}
+
+.tall .content p {
+  font-family: $header-font;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 900px) {
+  .bentoContent {
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 320px repeat(2, minmax(180px, auto));
+    grid-template-areas:
+      "hero hero"
+      "box1 box2"
+      "box3 tall";
+  }
+}
+
+@media (max-width: 600px) {
+  .bentoContent {
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px repeat(3, minmax(150px, auto)) 360px;
+    grid-template-areas: "hero" "box1" "box2" "box3" "tall";
+    gap: 12px;
+    padding: 0.75rem;
+  }
+  .tall .content h3 { font-size: 2.1rem; }
+}

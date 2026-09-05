@@ -1,0 +1,57 @@
+[
+  {
+    "id": "fixer-citrus-charge",
+    "name": "Citrus Charge",
+    "base": "green tea",
+    "icon": "caffeine",
+    "price": 4.5,
+    "calories": 210,
+    "notes": ["Green Tea", "Lemon", "Orange"],
+    "description": "Bright citrus flavors over lightly caffeinated green tea for a clean, energizing refresher.",
+    "image": "/assets/images/menu-thumbnails/fixers/citrus-charge.webp"
+  },
+  {
+    "id": "fixer-berry-breeze",
+    "name": "Berry Breeze",
+    "base": "lemonade",
+    "icon": "fruit",
+    "price": 4.25,
+    "calories": 280,
+    "notes": ["Strawberry", "Blueberry", "Raspberry"],
+    "description": "A sweet-tart blend of mixed berries shaken with house lemonade.",
+    "image": "/assets/images/menu-thumbnails/fixers/berry-breeze.webp"
+  },
+  {
+    "id": "fixer-tropical-spark",
+    "name": "Tropical Spark",
+    "base": "sparkling water",
+    "icon": "sparkle",
+    "price": 4.25,
+    "calories": 170,
+    "notes": ["Pineapple", "Mango", "Passionfruit"],
+    "description": "Lightly sparkling tropical flavors that are crisp, refreshing, and caffeine-free.",
+    "image": "/assets/images/menu-thumbnails/fixers/tropical-spark.webp"
+  },
+  {
+    "id": "fixer-peach-boost",
+    "name": "Peach Boost",
+    "base": "black tea",
+    "icon": "caffeine",
+    "price": 4.5,
+    "calories": 230,
+    "notes": ["Black Tea", "Peach", "Honey"],
+    "description": "Smooth black tea infused with ripe peach and a touch of honey for a gentle caffeine lift.",
+    "image": "/assets/images/menu-thumbnails/fixers/peach-boost.webp"
+  },
+  {
+    "id": "fixer-cucumber-mint",
+    "name": "Cucumber Mint",
+    "base": "water",
+    "icon": "leaf",
+    "price": 4.0,
+    "calories": 90,
+    "notes": ["Cucumber", "Mint", "Lime"],
+    "description": "Ultra-refreshing cucumber and mint with a splash of lime—cool, clean, and caffeine-free.",
+    "image": "/assets/images/menu-thumbnails/fixers/cucumber-mint.webp"
+  }
+]

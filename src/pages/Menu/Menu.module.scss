@@ -1,0 +1,194 @@
+@use "../../scss/abstracts/variables" as *;
+
+.menu {
+  width: 100%;
+  height: auto;
+  min-height: 800px;
+
+  background-color: $light-accent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu nav {
+  margin-top: 1.2rem;
+  width: min(92%, 1650px);
+}
+
+.menuNav {
+  position: relative;
+  width: 100%;
+  height: 120px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(1rem, 2.5vw, 3.5rem);
+  align-items: flex-end;
+  border-bottom: 3px solid $dark-accent;
+  margin-bottom: 2.6rem;
+}
+
+.menuNav::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  box-shadow: 0 2px 4px rgba($dark-accent, 0.2);
+}
+
+.menuNav a {
+  color: $dark-accent;
+  font-family: $header-font;
+  font-size: clamp(1.75rem, 2vw, 2.35rem);
+  white-space: nowrap;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+.menuNav a:hover {
+  transform: scale(1.1);
+}
+
+.menuNav a:active {
+  color: $primary-color;
+}
+
+.bubbleBorder {
+  position: relative;
+  width: 100vw;
+  height: 450px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("../../assets/graphics/top-border.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: top center;
+}
+
+.bubbleBorder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bubbleBorder::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(
+    to bottom,
+    rgba($light-accent, 0) 0%,
+    rgba($light-accent, 0.35) 40%,
+    rgba($light-accent, 0.55) 75%,
+    rgba($light-accent, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+.menu > section {
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader h2 {
+  width: 100%;
+  font-family: $header-font;
+  color: $dark-accent;
+  font-size: 2.2rem;
+  border-bottom: 2px solid $dark-accent;
+}
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.featuredGrid {
+  height: auto;
+  width: min(94%, 1650px);
+  margin: 0 auto 5rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2.5rem, 4vw, 4.5rem);
+  padding: 2rem 1rem;
+}
+
+.featuredHeader {
+  font-size: 4.6em;
+  font-family: $accent-font;
+  border-bottom: none;
+  color: $dark-accent;
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4rem;
+}
+
+@media (max-width: 1100px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 3rem;
+  }
+  .menuGrid {
+    padding-inline: 2rem;
+    gap: 2rem;
+  }
+  .menuNav a {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bubbleBorder {
+    height: 250px;
+  }
+  .menu nav {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0 1rem;
+  }
+  .menuNav {
+    width: max-content;
+    min-width: 100%;
+    height: 90px;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+  .menuNav a {
+    display: block;
+    white-space: nowrap;
+    font-size: 1.35rem;
+  }
+  .featuredGrid,
+  .menuGrid {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+  }
+  .featuredHeader {
+    font-size: clamp(3rem, 14vw, 4.6rem);
+  }
+  .sectionHeader {
+    padding-inline: 1rem;
+  }
+}

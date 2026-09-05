@@ -1,0 +1,28 @@
+
+// variables import
+@use "../../scss/abstracts/variables" as *;
+
+.locationList {
+    width: 100%;
+    gap: 2.2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.stateSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.locations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.locations a { color: inherit; }

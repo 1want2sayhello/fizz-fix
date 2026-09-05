@@ -1,0 +1,425 @@
+@use "../../../../scss/abstracts/variables" as *;
+
+.Home {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.hero {
+  position: relative;
+
+  width: 100%;
+
+  min-height: clamp(620px, 80svh, 860px);
+
+  overflow: hidden;
+}
+
+.heroVideo,
+.heroVideo video,
+.videoOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+}
+
+.heroVideo video {
+  object-fit: cover;
+
+  opacity: 0.5;
+}
+
+.videoOverlay {
+  z-index: 2;
+
+  background: linear-gradient(
+    to bottom,
+
+    rgba($primary-color, 1),
+    rgba($light-accent, 0.1)
+  );
+}
+
+.heroContent {
+  position: relative;
+
+  z-index: 5;
+
+  min-height: clamp(620px, 80svh, 860px);
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: clamp(2.25rem, 5vh, 3.5rem) 1rem 2.5rem;
+}
+
+.heroTitle {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 0.75rem;
+}
+
+.mainTitle {
+  position: relative;
+
+  display: inline-flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 2rem 6rem;
+}
+
+.stackedText {
+  position: relative;
+
+  display: block;
+
+  min-width: max-content;
+}
+
+.stackedText span {
+  display: block;
+
+  font-family: $accent-font;
+
+  line-height: 0.9;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.topText,
+.shadow {
+  font-size: clamp(4rem, 12vw, 12rem);
+}
+
+.topText {
+  position: relative;
+
+  z-index: 3;
+
+  color: $secondary-color;
+}
+
+.shadow {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  z-index: 2;
+
+  color: rgba(#0e0c0c, 0.6);
+
+  // transform: translate(8px, 6px);
+
+  transform: translate(clamp(8px, 4vw, 18px), 4px);
+}
+
+.estTag {
+  position: absolute;
+
+  top: 50%;
+
+  left: 0;
+
+  z-index: 1;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: $secondary-color;
+
+  font-family: $header-font;
+}
+
+.estTag span {
+  margin: 0;
+
+  font-size: clamp(1.25rem, 2vw, 2.2rem);
+
+  font-weight: 400;
+}
+
+.heroTitle p {
+  margin: 0;
+
+  font-family: $header-font;
+
+  color: $secondary-color;
+
+  font-size: clamp(1rem, 2vw, 3rem);
+}
+
+.ctaSection {
+  width: min(800px, 100%);
+
+  height: 180px;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  padding: 1.6rem;
+
+  margin-top: 1.5rem;
+}
+
+.ctaSection a {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  font-family: $header-font;
+
+  color: $secondary-color;
+
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+
+  transition: 0.2s ease-in;
+
+  cursor: pointer;
+}
+
+.primaryCTA {
+  width: 200px;
+
+  height: 100%;
+
+  background-image: url("../../../../assets/graphics/bottle-cap.png");
+
+  background-position: center;
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
+.primaryCTA:hover {
+  background-image: url("../../../../assets/graphics/bottle-cap-cream.svg");
+
+  color: $dark-accent;
+}
+
+.primaryCTA span {
+  margin-right: 10px;
+}
+
+.secondaryCTA {
+  width: 250px;
+
+  height: 80px;
+
+  border: 3px solid $dark-accent;
+
+  border-radius: 50px;
+}
+
+.secondaryCTA:hover {
+  background-color: $primary-color;
+}
+
+@media (max-width: 1200px) {
+  .shadow {
+    transform: translate(4%, 5px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .shadow {
+    transform: translate(6%, 5px);
+  }
+}
+
+@media (max-width: 850px) {
+  .shadow {
+    transform: translate(8%, 4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .heroContent {
+    min-height: calc(100svh - 110px);
+  }
+
+  .heroContent {
+    justify-content: center;
+
+    padding: 2rem 1rem;
+  }
+
+  .mainTitle {
+    width: 100%;
+
+    padding: 1rem 2rem;
+  }
+
+  .stackedText {
+    min-width: 0;
+
+    width: 100%;
+  }
+
+  .topText,
+  .shadow {
+    font-size: clamp(3rem, 16vw, 5.5rem);
+  }
+
+  .shadow {
+    transform: translate(10%, 4px);
+  }
+
+  .estTag span {
+    font-size: 1.25rem;
+  }
+
+  .heroTitle p {
+    font-size: clamp(1rem, 4.5vw, 1.4rem);
+  }
+
+  .ctaSection {
+    width: 100%;
+
+    height: auto;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-top: 1.5rem;
+
+    padding: 0;
+  }
+
+  .primaryCTA {
+    width: 120px;
+
+    height: 120px;
+
+    flex-shrink: 0;
+  }
+
+  .secondaryCTA {
+    width: 150px;
+
+    height: 60px;
+
+    flex-shrink: 0;
+  }
+
+  .ctaSection a {
+    font-size: 1rem;
+  }
+
+  .primaryCTA span,
+  .secondaryCTA span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .shadow {
+    transform: translate(12%, 4px);
+  }
+}
+
+@media (max-width: 560px) {
+  .shadow {
+    transform: translate(15%, 4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .shadow {
+    transform: translate(17%, 4px);
+  }
+}
+
+@media (max-width: 420px) {
+  .mainTitle {
+    padding-inline: 1.25rem;
+  }
+
+  .topText,
+  .shadow {
+    font-size: clamp(2.8rem, 15vw, 4.6rem);
+  }
+
+  .shadow {
+    transform: translate(18%, 4px);
+  }
+
+  .ctaSection {
+    gap: 0.75rem;
+  }
+
+  .primaryCTA {
+    width: 120px;
+
+    height: 120px;
+  }
+
+  .secondaryCTA {
+    width: 140px;
+
+    height: 56px;
+  }
+
+  .primaryCTA span {
+    font-size: 0.78rem;
+  }
+
+  .secondaryCTA span {
+    font-size: 0.82rem;
+  }
+}

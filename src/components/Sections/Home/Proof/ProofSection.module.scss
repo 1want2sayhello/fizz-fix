@@ -1,0 +1,146 @@
+@use "../../../../scss/abstracts/variables" as *;
+
+/**
+        Proof Section
+*/
+
+.proofSection {
+  position: relative;
+  min-height: 0;
+  height: auto;
+  width: 100%;
+  background-color: $light-accent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $dark-accent;
+}
+
+.proofHeader {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $accent-font;
+  font-size: 1.6rem;
+}
+
+.proofContent {
+  position: relative;
+  height: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.proof {
+  position: relative;
+  z-index: 100;
+  height: auto;
+  max-height: 320px;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.proofImg {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proofImg img {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proofComment {
+  flex: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: $body-font;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+// Bubble Border
+
+@keyframes fizzing {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.bubbleBorder {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.bubbleBorder img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(-24%);
+}
+
+@media (max-width: 768px) {
+  .proofSection {
+    padding-top: 2rem;
+  }
+
+  .proofContent {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .proof {
+    width: 100%;
+    max-width: 520px;
+    min-height: 0;
+    gap: 0.75rem;
+  }
+
+  .proofImg {
+    height: 110px;
+  }
+
+  .proofComment {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .bubbleBorder img {
+    transform: translateY(-18%);
+  }
+}

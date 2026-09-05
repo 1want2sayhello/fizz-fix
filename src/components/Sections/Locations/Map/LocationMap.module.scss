@@ -1,0 +1,154 @@
+@use "../../../../scss/abstracts/variables" as *;
+
+.locationsHeader {
+  position: relative;
+  background: linear-gradient(
+    to top,
+    rgba($light-accent, 0.6) 0%,
+    rgba($light-accent, 0.65) 25%,
+    rgba($primary-color, 0.65) 65%,
+    rgba($primary-color, 0.9) 100%
+  );
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.locationsHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/graphics/top-border.png");
+  background-size: cover;
+  background-position: center 55%;
+  opacity: 0.1;
+}
+
+.locationsHeader h2,
+.locationsHeader p {
+  z-index: 2;
+  margin: 0;
+}
+
+.locationsHeader h2 {
+  font-family: $accent-font;
+  font-size: 2.6rem;
+  margin-bottom: 0.8rem;
+  color: $secondary-color;
+}
+
+.locationsHeader p {
+  font-family: $header-font;
+  font-size: 1.6rem;
+  color: $dark-accent;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: clamp(400px, 80vh, 1000px);
+}
+
+.mapContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.scrollContainer {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  width: min(600px, calc(100% - 30px));
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 99;
+  margin-bottom: 3rem;
+  background: rgba($secondary-color, 0.82);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.searchBox {
+  width: 100%;
+  height: 150px;
+  background-color: $light-accent;
+  padding: 2rem;
+  border-radius: inherit;
+}
+
+.locationScroll {
+  width: 100%;
+  flex: 1;
+  overflow-y: scroll;
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+  .map {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mapContainer {
+    position: relative;
+    height: 420px;
+    order: 1;
+  }
+
+  .scrollContainer {
+    position: relative;
+    inset: auto;
+    order: 2;
+    max-width: none;
+    max-height: 620px;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  .locationsHeader {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .locationsHeader h2 {
+    font-size: 2rem;
+  }
+
+  .locationsHeader p {
+    font-size: 1.15rem;
+  }
+
+  .searchBox {
+    height: auto;
+    min-height: 120px;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapContainer {
+    height: 340px;
+  }
+}

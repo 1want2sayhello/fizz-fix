@@ -1,0 +1,33 @@
+@use "../../../scss/abstracts/variables" as *;
+
+.hamburger {
+
+    all: unset;
+    cursor: pointer;
+
+    height: 100%;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.patty {
+    width: 50px;
+    height: 4px;
+    margin: 5px;
+    background-color: $secondary-color;
+}
+
+.patty { transition: transform 0.2s ease, opacity 0.2s ease; }
+.open .patty:nth-child(1) { transform: translateY(14px) rotate(45deg); }
+.open .patty:nth-child(2) { opacity: 0; }
+.open .patty:nth-child(3) { transform: translateY(-14px) rotate(-45deg); }
+
+@media (max-width: 480px) {
+    .hamburger { width: 72px; }
+    .patty { width: 40px; }
+}

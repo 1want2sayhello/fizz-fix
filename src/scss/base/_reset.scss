@@ -1,0 +1,46 @@
+/**
+        STYLES RESET
+**/
+@use "../abstracts/variables" as *;
+*,
+*::after, 
+*::before
+{
+      box-sizing: border-box;
+
+}
+
+html, body {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: $primary-color;
+}
+
+body { overflow-x: hidden; }
+
+img, video { max-width: 100%; }
+
+
+h1, h2 {
+   line-height: 1.2;
+   margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+ul, li, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.main-content {
+    padding-top: calc($nav-height * 1.4);
+}
+
+@media (max-width: 768px) {
+    .main-content { padding-top: 110px; }
+}
