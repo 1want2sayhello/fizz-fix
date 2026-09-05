@@ -1,5 +1,6 @@
 import React from "react";
 import HeroVideo from "../../../../assets/videos/soda-hero.mp4";
+import HeroPoster from "../../../../assets/images/soda-hero-poster.webp";
 import { Link } from "react-router-dom";
 import styles from "./HomeHero.module.scss";
 
@@ -9,8 +10,8 @@ const HomeHero = () => {
       <div className={styles.videoOverlay} aria-hidden="true"></div>
 
       <div className={styles.heroVideo} aria-hidden="true">
-        <video playsInline autoPlay loop muted>
-          <source src={HeroVideo} type="video/mp4" />
+        <video playsInline autoPlay loop muted preload="auto">
+          <source src={HeroVideo} type="video/mp4" poster={HeroPoster} />
         </video>
       </div>
 
