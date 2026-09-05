@@ -6,7 +6,7 @@ Fizz Fix is a responsive soda shop UI demo for browsing specialty drinks, buildi
 
 Built with React, it features a category-driven drink menu, persistent cart state, interactive Mapbox locations, reusable ordering components, responsive layouts, and accessible semantic controls.
 
-Live Link 🔗: [to be added]
+Live Link 🔗: (https://fizz-fix.vercel.app/)
 
 ## Key Features 🔑
 
