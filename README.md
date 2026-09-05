@@ -1,5 +1,5 @@
 
-# Fizz Fix | Soda Shop UI Demo 
+# Fizz Fix | Soda Shop UI Demo 🥤
 
 
 Fizz Fix is a responsive soda shop UI demo for browsing specialty drinks, building an order, and finding nearby store locations.
