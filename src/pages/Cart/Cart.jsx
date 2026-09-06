@@ -45,11 +45,15 @@ const Cart = () => {
       type: "CLEAR_CART",
     });
   };
+  const taxRate = 0.07;
 
   const cartTotal = cart.reduce(
     (total, item) => total + Number(item.price) * item.quantity,
     0,
   );
+
+  const taxAmount = cartTotal * taxRate;
+  const orderTotal = cartTotal + taxAmount;
 
   const handlePlaceOrder = () => {
     const orderNumber = generateOrderNumber();
@@ -58,7 +62,7 @@ const Cart = () => {
       "fizz-fix-last-order",
       JSON.stringify({
         items: cart,
-        total: cartTotal,
+        total: orderTotal,
         orderNumber,
       }),
     );
@@ -215,8 +219,12 @@ const Cart = () => {
               ))}
 
               <div className={styles.orderTotal}>
-                <span>Total</span>
-                <strong>${cartTotal.toFixed(2)}</strong>
+                <span> Subtotal: ${cartTotal.toFixed(2)}</span>
+                <span>Tax: ${taxAmount.toFixed(2)}</span>
+
+                <strong className={styles.total}>
+                  Total: ${orderTotal.toFixed(2)}
+                </strong>
               </div>
             </div>
 
