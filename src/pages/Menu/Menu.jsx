@@ -3,6 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import { CartContext } from "../../context/CartContext";
 import MenuCard from "../../components/Cards/MenuCard/MenuCard";
 import { menuCategories } from "../../data/Menu/index";
+import arrow from "../../assets/icons/arrow-icon.png";
 import styles from "./Menu.module.scss";
 
 const Menu = () => {
@@ -26,44 +27,34 @@ const Menu = () => {
       <nav aria-label="Menu categories">
         <ul className={styles.menuNav}>
           <li>
-            {" "}
             <HashLink smooth to="/menu#featured">
-              {" "}
-              Featured{" "}
-            </HashLink>{" "}
+              Featured
+            </HashLink>
           </li>
           <li>
             <HashLink smooth to="/menu#dirty-sodas">
-              {" "}
-              Dirty Sodas{" "}
-            </HashLink>{" "}
+              Dirty Sodas
+            </HashLink>
           </li>
           <li>
-            {" "}
             <HashLink smooth to="/menu#fixers">
               Fixers
-            </HashLink>{" "}
+            </HashLink>
           </li>
           <li>
-            {" "}
             <HashLink smooth to="/menu#ice-cream">
-              {" "}
-              Sundaes & Milkshakes{" "}
-            </HashLink>{" "}
+              Sundaes & Milkshakes
+            </HashLink>
           </li>
           <li>
-            {" "}
             <HashLink smooth to="/menu#desserts">
-              {" "}
               Desserts
-            </HashLink>{" "}
+            </HashLink>
           </li>
           <li>
-            {" "}
             <HashLink smooth to="/menu#seasonal">
-              {" "}
-              Seasonal{" "}
-            </HashLink>{" "}
+              Seasonal
+            </HashLink>
           </li>
         </ul>
       </nav>
@@ -94,6 +85,20 @@ const Menu = () => {
           </div>
         </section>
       ))}
+
+      <button
+        type="button"
+        className={styles.scrollToTopBtn}
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+        }
+        aria-label="Scroll to top"
+      >
+        <img src={arrow} alt="scroll to top" />
+      </button>
     </div>
   );
 };

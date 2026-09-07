@@ -1,6 +1,7 @@
 @use "../../scss/abstracts/variables" as *;
 
 .menu {
+  position: relative;
   width: 100%;
   height: auto;
   min-height: 800px;
@@ -143,6 +144,66 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 4rem;
+}
+
+.scrollToTopBtn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 50px;
+  height: 50px;
+
+  border: 2px solid $light-accent;
+  border-radius: 50%;
+
+  background-color: $dark-accent;
+  color: $light-accent;
+
+  cursor: pointer;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 8px;
+
+  box-shadow: 0 4px 10px rgba($dark-accent, 0.25);
+}
+
+.scrollToTopBtn::before,
+.scrollToTopBtn::after {
+  content: "";
+  position: absolute;
+
+  border: 2px solid $light-accent;
+  border-radius: 50%;
+
+  background-color: $dark-accent;
+
+  pointer-events: none;
+}
+
+.scrollToTopBtn::before {
+  width: 18px;
+  height: 18px;
+
+  top: -13px;
+  left: -8px;
+}
+
+.scrollToTopBtn::after {
+  width: 10px;
+  height: 10px;
+
+  top: -20px;
+  left: 10px;
+}
+
+.scrollToTopBtn img {
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 @media (max-width: 1100px) {
