@@ -23,6 +23,8 @@ export const cartReducer = (state, action) => {
         name: incomingItem.name,
         price: incomingItem.price,
         image: incomingItem.image,
+        calories: incomingItem.calories,
+        notes: incomingItem.notes || [],
         quantity: 1,
         customizations: [],
       };

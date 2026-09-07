@@ -6,10 +6,12 @@ import Home from "./pages/Home/Home";
 import WhyUs from "./pages/WhyUs/WhyUs";
 import Menu from "./pages/Menu/Menu";
 import Locations from "./pages/Locations/Locations";
+
 import OrderConfirm from "./pages/OrderConfirm/OrderConfirm";
 import Cart from "./pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import "./scss/main.scss";
+
 function App() {
   return (
     <>
