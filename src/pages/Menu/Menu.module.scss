@@ -240,6 +240,13 @@
   outline: none;
 }
 
+.scrollToTopBtn img {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin-right: 2px;
+}
+
 .scrollToTopBtn:focus-visible {
   outline: 3px solid $primary-color;
   outline-offset: 3px;

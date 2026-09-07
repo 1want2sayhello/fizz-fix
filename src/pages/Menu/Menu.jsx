@@ -3,6 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import { CartContext } from "../../context/CartContext";
 import MenuCard from "../../components/Cards/MenuCard/MenuCard";
 import { menuCategories } from "../../data/Menu/index";
+import arrow from "../../assets/icons/arrow-icon.png";
 import styles from "./Menu.module.scss";
 
 const Menu = () => {
@@ -115,7 +116,7 @@ const Menu = () => {
         }
         aria-label="Scroll to top"
       >
-        ↑
+        <img src={arrow} alt="" />
       </button>
     </div>
   );
