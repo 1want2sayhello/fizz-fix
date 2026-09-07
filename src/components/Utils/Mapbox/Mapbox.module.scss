@@ -1,11 +1,15 @@
-@use '../../../scss/abstracts/variables';
+@use "../../../scss/abstracts/variables";
 
 .mapMarker {
-    width: 150px;
-    height: 150px;
+  width: 120px;
+  height: 120px;
 
-    background-image: url('../../../assets/graphics/fizz-fix-bottle-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
+  background-image: url("../../../assets/graphics/fizz-fix-bottle-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  transition:
+    width 0.2s ease-out,
+    height 0.2s ease-out;
 }

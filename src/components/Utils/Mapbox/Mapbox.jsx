@@ -7,6 +7,15 @@ const US_BOUNDS = [
   [-66.5, 50],
 ];
 
+const getMarkerSize = (zoom) => {
+  if (zoom < 5) return 40;
+  if (zoom < 8) return 50;
+  if (zoom < 11) return 65;
+  if (zoom < 14) return 90;
+
+  return 120;
+};
+
 const Mapbox = ({ selectedLocation }) => {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
@@ -25,7 +34,21 @@ const Mapbox = ({ selectedLocation }) => {
       renderWorldCopies: false,
     });
 
+    const updateMarkerSize = () => {
+      if (!mapRef.current || !markerRef.current) return;
+
+      const zoom = mapRef.current.getZoom();
+      const size = getMarkerSize(zoom);
+      const markerEl = markerRef.current.getElement();
+
+      markerEl.style.width = `${size}px`;
+      markerEl.style.height = `${size}px`;
+    };
+
+    mapRef.current.on("zoom", updateMarkerSize);
+
     return () => {
+      mapRef.current?.off("zoom", updateMarkerSize);
       markerRef.current?.remove();
       mapRef.current?.remove();
       mapRef.current = null;
@@ -51,6 +74,11 @@ const Mapbox = ({ selectedLocation }) => {
 
     const el = document.createElement("div");
     el.className = styles.mapMarker;
+
+    const size = getMarkerSize(mapRef.current.getZoom());
+
+    el.style.width = `${size}px`;
+    el.style.height = `${size}px`;
 
     markerRef.current = new mapboxgl.Marker(el)
       .setLngLat([lng, lat])
