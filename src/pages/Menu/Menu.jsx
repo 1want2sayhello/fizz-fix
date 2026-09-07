@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
 import { CartContext } from "../../context/CartContext";
 import MenuCard from "../../components/Cards/MenuCard/MenuCard";
 import { menuCategories } from "../../data/Menu/index";
-import arrow from "../../assets/icons/arrow-icon.png";
 import styles from "./Menu.module.scss";
 
 const Menu = () => {
@@ -11,6 +10,22 @@ const Menu = () => {
   const featuredDrinks = menuItems.filter((item) => item.featured);
 
   const { dispatch } = useContext(CartContext);
+
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > window.innerHeight * 1.1);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleAddtoCart = (item) => {
     dispatch({
@@ -61,6 +76,7 @@ const Menu = () => {
 
       <section id="featured" className={styles.featured}>
         <h2 className={styles.featuredHeader}> Featured </h2>
+
         <div className={styles.featuredGrid}>
           {featuredDrinks.map((item) => (
             <MenuCard key={item.id} item={item} onAddToCart={handleAddtoCart} />
@@ -88,7 +104,9 @@ const Menu = () => {
 
       <button
         type="button"
-        className={styles.scrollToTopBtn}
+        className={`${styles.scrollToTopBtn} ${
+          showScrollTop ? styles.visible : ""
+        }`}
         onClick={() =>
           window.scrollTo({
             top: 0,
@@ -97,7 +115,7 @@ const Menu = () => {
         }
         aria-label="Scroll to top"
       >
-        <img src={arrow} alt="scroll to top" />
+        ↑
       </button>
     </div>
   );
