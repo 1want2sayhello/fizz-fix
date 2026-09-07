@@ -74,7 +74,7 @@ const Cart = () => {
 
     setIsSubmitting(true);
   };
-  console.log(cart);
+
   const handleOrderComplete = () => {
     clearCart();
     navigate("/order-confirmation");

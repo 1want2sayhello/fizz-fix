@@ -36,6 +36,7 @@
   font-family: $accent-font;
   font-size: clamp(1.2rem, 8vw, 3rem);
   letter-spacing: 0.2rem;
+  text-transform: uppercase;
 
   color: $secondary-color;
 }
@@ -682,7 +683,7 @@
   }
 
   .cartHeader h1 {
-    font-size: clamp(2.2rem, 11vw, 3rem);
+    font-size: 1rem;
     line-height: 0.95;
   }
 
